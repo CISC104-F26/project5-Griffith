@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://qhekoc3t8uol"]
+
+[ext_resource type="Texture2D" uid="uid://88dv73wqx2ch" path="res://PerfectCookie.webp" id="1_3r24c"]
+
+[sub_resource type="GDScript" id="GDScript_ra2i3"]
+script/source = "extends \"res://player.gd\"
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogt5y"]
+radius = 58.137768
+
+[sub_resource type="BoxMesh" id="BoxMesh_oq54p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5w0c"]
+size = Vector2(818, 210)
+
+[node name="Scene2" type="Node2D" unique_id=363451539]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1737919187]
+position = Vector2(229, 243)
+script = SubResource("GDScript_ra2i3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1983889185]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3r24c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=12057045]
+shape = SubResource("CircleShape2D_ogt5y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1245718541]
+position = Vector2(-18, 421)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1927855827]
+modulate = Color(0.16078432, 0.69411767, 0.4627451, 1)
+position = Vector2(425, 129)
+scale = Vector2(818.32947, 210.36517)
+mesh = SubResource("BoxMesh_oq54p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1858827610]
+position = Vector2(425, 129)
+shape = SubResource("RectangleShape2D_c5w0c")
+
+[node name="Label" type="Label" parent="." unique_id=841795757]
+offset_left = 367.00003
+offset_top = 99.0
+offset_right = 456.00003
+offset_bottom = 122.0
+scale = Vector2(7.4815826, 10.781557)
+text = "not scene 1"

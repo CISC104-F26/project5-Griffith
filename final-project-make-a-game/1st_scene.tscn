@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://c64h4ys6uihuo"]
+
+[ext_resource type="Script" uid="uid://hnfubwooqarq" path="res://player.gd" id="1_jaq6k"]
+[ext_resource type="Texture2D" uid="uid://88dv73wqx2ch" path="res://PerfectCookie.webp" id="2_7oohi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ra2i3"]
+radius = 58.137768
+
+[sub_resource type="GDScript" id="GDScript_otjlk"]
+script/source = "extends CharacterBody2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	position = get_global_mouse_position()
+	
+	if Input.is_action_pressed(\"phase\"):
+		z_index -= 2
+	else:
+		z_index = 1
+		
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4gaj"]
+radius = 116.01724
+
+[sub_resource type="BoxMesh" id="BoxMesh_ra2i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra2i3"]
+size = Vector2(818, 210)
+
+[sub_resource type="GDScript" id="GDScript_7oohi"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4gaj"]
+size = Vector2(38.475716, 1498.7689)
+
+[node name="Test_Scene" type="Node2D" unique_id=1892796017]
+
+[node name="WASD" type="CharacterBody2D" parent="." unique_id=2095628243]
+position = Vector2(61, 284)
+disable_mode = 2
+script = ExtResource("1_jaq6k")
+
+[node name="Sprite2D" type="Sprite2D" parent="WASD" unique_id=1470564960]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7oohi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WASD" unique_id=605233873]
+shape = SubResource("CircleShape2D_ra2i3")
+
+[node name="Cursor" type="CharacterBody2D" parent="." unique_id=1763792743]
+z_index = 1
+position = Vector2(811, 256)
+script = SubResource("GDScript_otjlk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cursor" unique_id=967623307]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7oohi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor" unique_id=727975139]
+position = Vector2(-1, -1)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_g4gaj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=602519625]
+position = Vector2(-18, 421)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1581145165]
+modulate = Color(0.16078432, 0.69411767, 0.4627451, 1)
+position = Vector2(425, 129)
+scale = Vector2(818.32947, 210.36517)
+mesh = SubResource("BoxMesh_ra2i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630655602]
+position = Vector2(425, 129)
+shape = SubResource("RectangleShape2D_ra2i3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1664297718]
+position = Vector2(431, 445)
+script = SubResource("GDScript_7oohi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=883542419]
+position = Vector2(-24, 105)
+scale = Vector2(21.246176, -0.14003484)
+shape = SubResource("RectangleShape2D_g4gaj")
