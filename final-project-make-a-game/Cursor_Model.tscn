@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cn30os0lpab5y"]
+
+[ext_resource type="Script" uid="uid://bh0je3jp7voj6" path="res://Cursor_Controls.gd" id="1_jd4gr"]
+[ext_resource type="Texture2D" uid="uid://88dv73wqx2ch" path="res://PerfectCookie.webp" id="1_qsv73"]
+[ext_resource type="Script" uid="uid://bwpsr1sx5ayae" path="res://area_2d.gd" id="3_dooxj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dooxj"]
+radius = 116.01724
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_62oy6"]
+radius = 27.165304
+
+[node name="Cursor" type="CharacterBody2D" unique_id=1411250560]
+z_index = 1
+script = ExtResource("1_jd4gr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1295819298]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qsv73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1652804828]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_dooxj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=514534864]
+scale = Vector2(1, 1.0163795)
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 9800.0
+script = ExtResource("3_dooxj")
+
+[node name="Field" type="CollisionShape2D" parent="Area2D" unique_id=1454861945]
+shape = SubResource("CircleShape2D_62oy6")

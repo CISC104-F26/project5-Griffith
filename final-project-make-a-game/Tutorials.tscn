@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cwhuwcou37ehc"]
+
+[ext_resource type="Texture2D" uid="uid://88dv73wqx2ch" path="res://PerfectCookie.webp" id="1_mhsd5"]
+[ext_resource type="Script" uid="uid://df4nqbm0xsggd" path="res://ragdoll.gd" id="2_361ry"]
+[ext_resource type="PackedScene" uid="uid://cpp4ukqxpph67" path="res://WASD_Model.tscn" id="2_w3vjj"]
+[ext_resource type="PackedScene" uid="uid://cn30os0lpab5y" path="res://Cursor_Model.tscn" id="3_w3vjj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ra2i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra2i3"]
+size = Vector2(0.9042961, 11.636877)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otjlk"]
+size = Vector2(5.825308, 24.16246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4gaj"]
+size = Vector2(35.932434, 1.2388949)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mhsd5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otjlk"]
+radius = 29.068884
+
+[sub_resource type="BoxMesh" id="BoxMesh_otjlk"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ra2i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4liu5"]
+size = Vector2(188, 30)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_otjlk"]
+bounce = 0.14
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4gaj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4gaj"]
+radius = 25.0
+
+[node name="Tutorial" type="Node2D" unique_id=296515351]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1751719243]
+position = Vector2(564, 324)
+rotation = 3.1415927
+scale = Vector2(31.05937, -824.23676)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1504434657]
+scale = Vector2(1.0000001, 1)
+mesh = SubResource("BoxMesh_ra2i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1525557727]
+position = Vector2(-1.9073486e-06, -0.27237326)
+scale = Vector2(1.0681151, 0.039096948)
+shape = SubResource("RectangleShape2D_ra2i3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=356103116]
+position = Vector2(-7.6293945e-06, 0.25963414)
+scale = Vector2(0.16580896, -0.019883925)
+shape = SubResource("RectangleShape2D_otjlk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=460086931]
+position = Vector2(564, 324)
+rotation = 3.1415927
+scale = Vector2(31.05937, -824.23676)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="StaticBody2D2" unique_id=1126694674]
+rotation = -1.5707974
+scale = Vector2(0.039184276, 46.41378)
+mesh = SubResource("BoxMesh_ra2i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1028800338]
+position = Vector2(-1.9073486e-06, 0)
+scale = Vector2(1.29207, 0.031337466)
+shape = SubResource("RectangleShape2D_g4gaj")
+
+[node name="WASD" parent="." unique_id=1935499712 instance=ExtResource("2_w3vjj")]
+position = Vector2(89, 236)
+scale = Vector2(0.5, 0.5)
+
+[node name="Ragdoll" type="RigidBody2D" parent="." unique_id=894278059]
+position = Vector2(219, 264)
+disable_mode = 2
+physics_material_override = SubResource("PhysicsMaterial_mhsd5")
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("2_361ry")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ragdoll" unique_id=1357429097]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_mhsd5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ragdoll" unique_id=1699695578]
+shape = SubResource("CircleShape2D_otjlk")
+
+[node name="Cursor" parent="." unique_id=1411250560 instance=ExtResource("3_w3vjj")]
+position = Vector2(458, 51)
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2073438405]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3" unique_id=1730082905]
+position = Vector2(99, 88.99999)
+scale = Vector2(188.66705, 30.901083)
+mesh = SubResource("BoxMesh_otjlk")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="StaticBody2D3" unique_id=1454229450]
+position = Vector2(362, 259)
+scale = Vector2(206, -98.49999)
+mesh = SubResource("PrismMesh_ra2i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1537830113]
+position = Vector2(99, 89)
+shape = SubResource("RectangleShape2D_4liu5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=1126188397]
+polygon = PackedVector2Array(361, 209, 258, 309, 465, 309)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1799766467]
+position = Vector2(-193, 73)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4" unique_id=1805834984]
+position = Vector2(99, 88.99999)
+scale = Vector2(188.66705, 30.901083)
+mesh = SubResource("BoxMesh_otjlk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=2031102232]
+position = Vector2(99, 89)
+shape = SubResource("RectangleShape2D_4liu5")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=679655720]
+position = Vector2(159, 219)
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_otjlk")
+contact_monitor = true
+max_contacts_reported = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D" unique_id=1520047072]
+scale = Vector2(50, 50)
+mesh = SubResource("SphereMesh_g4gaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=774482690]
+shape = SubResource("CircleShape2D_g4gaj")

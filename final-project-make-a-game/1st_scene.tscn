@@ -1,31 +1,11 @@
 [gd_scene format=3 uid="uid://c64h4ys6uihuo"]
 
-[ext_resource type="Script" uid="uid://hnfubwooqarq" path="res://player.gd" id="1_jaq6k"]
+[ext_resource type="Script" uid="uid://hnfubwooqarq" path="res://Keys_Control.gd" id="1_jaq6k"]
 [ext_resource type="Texture2D" uid="uid://88dv73wqx2ch" path="res://PerfectCookie.webp" id="2_7oohi"]
+[ext_resource type="Script" uid="uid://bh0je3jp7voj6" path="res://Cursor_Controls.gd" id="3_7oohi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ra2i3"]
 radius = 58.137768
-
-[sub_resource type="GDScript" id="GDScript_otjlk"]
-script/source = "extends CharacterBody2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	position = get_global_mouse_position()
-	
-	if Input.is_action_pressed(\"phase\"):
-		z_index -= 2
-	else:
-		z_index = 1
-		
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4gaj"]
 radius = 116.01724
@@ -50,26 +30,26 @@ func _process(_delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4gaj"]
-size = Vector2(38.475716, 1498.7689)
+size = Vector2(36.994896, 1299.6765)
 
 [node name="Test_Scene" type="Node2D" unique_id=1892796017]
 
-[node name="WASD" type="CharacterBody2D" parent="." unique_id=2095628243]
-position = Vector2(61, 284)
+[node name="WASD" type="CharacterBody2D" parent="." unique_id=1112539899]
+position = Vector2(219, 239)
 disable_mode = 2
 script = ExtResource("1_jaq6k")
 
-[node name="Sprite2D" type="Sprite2D" parent="WASD" unique_id=1470564960]
+[node name="Sprite2D" type="Sprite2D" parent="WASD" unique_id=1717067593]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7oohi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WASD" unique_id=605233873]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WASD" unique_id=1498925871]
 shape = SubResource("CircleShape2D_ra2i3")
 
 [node name="Cursor" type="CharacterBody2D" parent="." unique_id=1763792743]
 z_index = 1
-position = Vector2(811, 256)
-script = SubResource("GDScript_otjlk")
+position = Vector2(794, 224)
+script = ExtResource("3_7oohi")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Cursor" unique_id=967623307]
 scale = Vector2(0.5, 0.5)
@@ -98,6 +78,6 @@ position = Vector2(431, 445)
 script = SubResource("GDScript_7oohi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=883542419]
-position = Vector2(-24, 105)
+position = Vector2(-27, 118)
 scale = Vector2(21.246176, -0.14003484)
 shape = SubResource("RectangleShape2D_g4gaj")

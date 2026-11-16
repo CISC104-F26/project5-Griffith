@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://ddoxhjw0tptb"]
+
+[ext_resource type="Script" uid="uid://c2pud2f8vbunb" path="res://level_barriers.gd" id="1_65pcf"]
+[ext_resource type="PackedScene" uid="uid://cn30os0lpab5y" path="res://Cursor_Model.tscn" id="1_kidjj"]
+[ext_resource type="PackedScene" uid="uid://cpp4ukqxpph67" path="res://WASD_Model.tscn" id="2_65pcf"]
+[ext_resource type="Script" uid="uid://cher7q34r7hhk" path="res://BigButton.gd" id="4_a0j4s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mmt5b"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4gaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcjoi"]
+size = Vector2(74, 34.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra2i3"]
+size = Vector2(1.1461139, 116.569916)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4gaj"]
+size = Vector2(4.4518604, 21.338955)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otjlk"]
+size = Vector2(20.58665, 5.4053354)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4liu5"]
+size = Vector2(19.39402, 8.193539)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5s0c"]
+size = Vector2(340, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qufo"]
+size = Vector2(15, 253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m857p"]
+size = Vector2(1.0027547, 1.0020832)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yposb"]
+size = Vector2(19.867615, 20.14493)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q5v6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4gaj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ra2i3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4liu5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a5s0c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2qufo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_otjlk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wcjoi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_m857p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yposb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8q5v6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6m728"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ra2i3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4gaj"]
+radius = 50.01
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4gaj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ra2i3"]
+radius = 50.0
+
+[node name="Level_1" type="Node2D" unique_id=1274602272]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1929793386]
+z_index = -1
+position = Vector2(1159, 17)
+script = ExtResource("4_a0j4s")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D" unique_id=47503431]
+modulate = Color(0.47, 0.47, 0.47, 1)
+position = Vector2(-89, 111.25)
+scale = Vector2(90.193, 14.599)
+mesh = SubResource("BoxMesh_mmt5b")
+
+[node name="BigPurpleButton" type="MeshInstance2D" parent="Area2D" unique_id=203220775]
+modulate = Color(0.4690002, 0, 0.67, 1)
+z_index = -1
+position = Vector2(-89, 97)
+scale = Vector2(75.914, 26.955)
+mesh = SubResource("CapsuleMesh_g4gaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2027266756]
+position = Vector2(-89, 100.75)
+shape = SubResource("RectangleShape2D_wcjoi")
+
+[node name="Resetting_Barriers" type="Area2D" parent="." unique_id=1771280149]
+position = Vector2(1139, 631)
+script = ExtResource("1_65pcf")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=373720158]
+position = Vector2(6, -307)
+rotation = -3.1415925
+scale = Vector2(13.087729, 5.558896)
+shape = SubResource("RectangleShape2D_ra2i3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=453591309]
+position = Vector2(-1132, -307)
+scale = Vector2(3.4, 30.367)
+shape = SubResource("RectangleShape2D_g4gaj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=1473967071]
+position = Vector2(-563, -623.44196)
+scale = Vector2(54.598488, -2.7535553)
+shape = SubResource("RectangleShape2D_otjlk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=1700998738]
+position = Vector2(-563, 10)
+scale = Vector2(57.956, 1.85)
+shape = SubResource("RectangleShape2D_4liu5")
+
+[node name="CursorHatchArea" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=1343521093]
+position = Vector2(-167, -299)
+shape = SubResource("RectangleShape2D_a5s0c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=879640731]
+position = Vector2(-328, -116.5)
+shape = SubResource("RectangleShape2D_2qufo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=751555819]
+position = Vector2(-92, -488.51563)
+scale = Vector2(181.5, 15.000001)
+shape = SubResource("RectangleShape2D_m857p")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=1135189433]
+position = Vector2(-120.5, -361.5)
+scale = Vector2(0.755, 6.925)
+shape = SubResource("RectangleShape2D_yposb")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Resetting_Barriers" unique_id=344176409]
+position = Vector2(-315.75, -423.75)
+scale = Vector2(20.27, 0.751)
+shape = SubResource("RectangleShape2D_8q5v6")
+
+[node name="Level_Barrier" type="StaticBody2D" parent="." unique_id=949704141]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Level_Barrier" unique_id=1128126497]
+position = Vector2(576, 7.499999)
+scale = Vector2(1152, 15)
+mesh = SubResource("BoxMesh_g4gaj")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Level_Barrier" unique_id=779649704]
+position = Vector2(576, 641)
+scale = Vector2(1152, 15)
+mesh = SubResource("BoxMesh_g4gaj")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Level_Barrier" unique_id=1392615190]
+position = Vector2(7.000001, 325)
+rotation = 3.1415927
+scale = Vector2(15, 650)
+mesh = SubResource("BoxMesh_ra2i3")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Level_Barrier" unique_id=1730562616]
+position = Vector2(1145, 325)
+rotation = 3.1415927
+scale = Vector2(15, 650)
+mesh = SubResource("BoxMesh_ra2i3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level_Barrier" unique_id=1802711226]
+position = Vector2(1145, 324)
+rotation = -3.1415925
+scale = Vector2(13.087729, 5.558896)
+shape = SubResource("RectangleShape2D_ra2i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level_Barrier" unique_id=1285577838]
+position = Vector2(7, 324)
+scale = Vector2(3.4, 30.367)
+shape = SubResource("RectangleShape2D_g4gaj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level_Barrier" unique_id=1040126711]
+position = Vector2(576, 7.558056)
+scale = Vector2(54.598488, -2.7535553)
+shape = SubResource("RectangleShape2D_otjlk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level_Barrier" unique_id=205703281]
+position = Vector2(576, 641)
+scale = Vector2(57.956, 1.85)
+shape = SubResource("RectangleShape2D_4liu5")
+
+[node name="Interior_Barriers" type="StaticBody2D" parent="." unique_id=105733078]
+position = Vector2(1139, 631)
+
+[node name="CursorHatch" type="MeshInstance2D" parent="Interior_Barriers" unique_id=232897174]
+position = Vector2(-167.00002, -299)
+scale = Vector2(339.99997, 15)
+mesh = SubResource("BoxMesh_4liu5")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Interior_Barriers" unique_id=2041263190]
+position = Vector2(-328, -116.50001)
+scale = Vector2(15, 253.00002)
+mesh = SubResource("BoxMesh_a5s0c")
+
+[node name="CursorHatchBarrier" type="CollisionShape2D" parent="Interior_Barriers" unique_id=1624730497]
+position = Vector2(-167, -299)
+shape = SubResource("RectangleShape2D_a5s0c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interior_Barriers" unique_id=553917804]
+position = Vector2(-328, -116.5)
+shape = SubResource("RectangleShape2D_2qufo")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Interior_Barriers" unique_id=1853413808]
+position = Vector2(-481.8121, -235.87502)
+scale = Vector2(293.6243, 14.249991)
+mesh = SubResource("BoxMesh_2qufo")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Interior_Barriers" unique_id=1573491874]
+position = Vector2(-511.00006, -360.96875)
+scale = Vector2(15, 138.0625)
+mesh = SubResource("BoxMesh_otjlk")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Interior_Barriers" unique_id=1804869536]
+position = Vector2(-621.00006, -429.11725)
+scale = Vector2(15, 373.76553)
+mesh = SubResource("BoxMesh_wcjoi")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Interior_Barriers" unique_id=1855957201]
+position = Vector2(-427.75003, -299)
+scale = Vector2(181.5, 15.000001)
+mesh = SubResource("BoxMesh_m857p")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Interior_Barriers" unique_id=2108979610]
+position = Vector2(-315.75, -423.75)
+scale = Vector2(405.5, 15.019)
+mesh = SubResource("BoxMesh_yposb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Interior_Barriers" unique_id=792384109]
+position = Vector2(-315.75, -423.75)
+scale = Vector2(20.27, 0.751)
+shape = SubResource("RectangleShape2D_8q5v6")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Interior_Barriers" unique_id=1249372369]
+position = Vector2(-120.5, -360.46875)
+scale = Vector2(15, 137.0625)
+mesh = SubResource("BoxMesh_8q5v6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Interior_Barriers" unique_id=1019988520]
+position = Vector2(-120.5, -361.5)
+scale = Vector2(0.755, 6.925)
+shape = SubResource("RectangleShape2D_yposb")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Interior_Barriers" unique_id=1559833836]
+position = Vector2(-92.25, -488.5)
+scale = Vector2(181.5, 15.000001)
+mesh = SubResource("BoxMesh_6m728")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interior_Barriers" unique_id=1850627846]
+position = Vector2(-92, -488.51563)
+scale = Vector2(181.5, 15.000001)
+shape = SubResource("RectangleShape2D_m857p")
+
+[node name="Cursor" parent="." unique_id=1411250560 instance=ExtResource("1_kidjj")]
+position = Vector2(981, 505)
+scale = Vector2(0.75, 0.75)
+
+[node name="WASD" parent="." unique_id=1935499712 instance=ExtResource("2_65pcf")]
+position = Vector2(111, 565)
+scale = Vector2(0.75, 0.75)
+
+[node name="Exits" type="Area2D" parent="." unique_id=1666162589]
+modulate = Color(0.078431375, 1, 0.5058824, 1)
+position = Vector2(1082, 271)
+
+[node name="Keys_Exit" type="MeshInstance2D" parent="Exits" unique_id=1526482468]
+scale = Vector2(100, 100)
+mesh = SubResource("SphereMesh_ra2i3")
+
+[node name="Keys_Exit_Area" type="CollisionShape2D" parent="Exits" unique_id=1105432280]
+shape = SubResource("CircleShape2D_g4gaj")
+
+[node name="Cursor_Exit" type="MeshInstance2D" parent="Exits" unique_id=1127403945]
+position = Vector2(-390.99997, 0)
+scale = Vector2(100, 100)
+mesh = SubResource("SphereMesh_g4gaj")
+
+[node name="Keys_Exit_Area2" type="CollisionShape2D" parent="Exits" unique_id=1902910276]
+position = Vector2(-391, 0)
+shape = SubResource("CircleShape2D_ra2i3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Resetting_Barriers" to="Cursor" method="_on_resetting_barriers_body_entered"]

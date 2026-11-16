@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cpp4ukqxpph67"]
+
+[ext_resource type="Script" uid="uid://hnfubwooqarq" path="res://Keys_Control.gd" id="1_b2obj"]
+[ext_resource type="Texture2D" uid="uid://88dv73wqx2ch" path="res://PerfectCookie.webp" id="2_wndbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ra2i3"]
+radius = 58.137768
+
+[node name="WASD" type="CharacterBody2D" unique_id=1935499712]
+disable_mode = 2
+script = ExtResource("1_b2obj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371067573]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wndbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=306348262]
+shape = SubResource("CircleShape2D_ra2i3")
