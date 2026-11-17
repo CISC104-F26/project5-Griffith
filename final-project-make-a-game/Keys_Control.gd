@@ -38,7 +38,12 @@ func _physics_process(delta: float) -> void:
 		skew = 0.0
 		SPEED = 300.0
 	
-	
+	if Input.is_action_pressed("squish"):
+		scale.x = .25
+		SPEED = 150.0
+	else:
+		scale.x = .75
+		SPEED = 300.0
 	
 	if Input.is_action_just_pressed("change_scene"):
 		get_tree().change_scene_to_file("res://scene_2.tscn")
@@ -67,3 +72,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	
 	
+
+
+func _on_key_body_entered(body: Node2D) -> void:
+	%LockedHatch.z_index -= 2
+	%LockedHatch.position += Vector2(95,0)
+	%Key.position.x -= 200.0
+	
+	
+func _on_key_2_body_entered(body: Node2D) -> void:
+	%LockedHatch2.z_index -= 2
+	%LockedHatch2.position = Vector2(768,142.515)
+	%Key2.position.y -= 200.0

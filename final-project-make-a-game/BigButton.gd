@@ -11,16 +11,17 @@ func _process(delta: float) -> void:
 	
 	
 func _on_body_entered(body: Node2D) -> void:
-	$BigPurpleButton.position = Vector2(-89, 97)
+	$BigPurpleButton.position = Vector2(-89, 107)
 	get_node("../Interior_Barriers/CursorHatch").position = Vector2(49,-299)
 	get_node("../Interior_Barriers/CursorHatchBarrier").position = Vector2(49,-299)
 	get_node("../Resetting_Barriers/CursorHatchArea").position = Vector2(49,-299)
 	
 	
 func _on_body_exited(body: Node2D) -> void:
-	$BigPurpleButton.position = Vector2(-89, 107)
+	$BigPurpleButton.position = Vector2(-89, 97)
 	get_node("../Interior_Barriers/CursorHatch").position = Vector2(-167,-299)
 	get_node("../Interior_Barriers/CursorHatchBarrier").position = Vector2(-167,-299)
 	get_node("../Resetting_Barriers/CursorHatchArea").position = Vector2(-167,-299)
+	
 	
 	
