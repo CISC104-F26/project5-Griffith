@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	
 func on_index_changed():
 	item = doors[sliding_doors]
-	
+	print(item)
 func increase_index():
 	sliding_doors += 1
 	on_index_changed()

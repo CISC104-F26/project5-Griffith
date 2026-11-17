@@ -14,9 +14,8 @@ func _process(delta: float) -> void:
 		#gravity = 980.0
 		
 		
-	global_position = get_global_mouse_position()
+	#global_position = get_global_mouse_position()
 	if Input.is_action_pressed("combine"):
 		$Field.scale = Vector2(40, 40)
 	else:
 		$Field.scale = Vector2(0.1, 0.1)
-	

@@ -73,6 +73,7 @@ scale = Vector2(1.29207, 0.031337466)
 shape = SubResource("RectangleShape2D_g4gaj")
 
 [node name="WASD" parent="." unique_id=1935499712 instance=ExtResource("2_w3vjj")]
+unique_name_in_owner = true
 position = Vector2(89, 236)
 scale = Vector2(0.75, 0.75)
 
@@ -130,6 +131,7 @@ shape = SubResource("RectangleShape2D_4liu5")
 position = Vector2(159, 219)
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_otjlk")
+can_sleep = false
 contact_monitor = true
 max_contacts_reported = 2
 
